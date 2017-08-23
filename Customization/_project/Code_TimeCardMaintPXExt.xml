@@ -1,0 +1,75 @@
+﻿<Graph ClassName="TimeCardMaintPXExt" Source="#CDATA" IsNew="True" FileType="NewFile">
+    <CDATA name="Source"><![CDATA[using PX.Data;
+using PX.Objects.EP;
+
+namespace PXConfigurableTimeSpanExtPkg
+{
+    public class TimeCardMaintPXExt : PXGraphExtension<TimeCardMaint>
+    {
+        [PXMergeAttributes(Method = MergeMethod.Append)]
+        [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
+        [PXTimeListPXExt]
+        protected virtual void EPTimeCardSummary_Mon_CacheAttached(PXCache sender) { }
+
+        [PXMergeAttributes(Method = MergeMethod.Append)]
+        [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
+        [PXTimeListPXExt]
+        protected virtual void EPTimeCardSummary_Tue_CacheAttached(PXCache sender) { }
+
+        [PXMergeAttributes(Method = MergeMethod.Append)]
+        [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
+        [PXTimeListPXExt]
+        protected virtual void EPTimeCardSummary_Wed_CacheAttached(PXCache sender) { }
+
+        [PXMergeAttributes(Method = MergeMethod.Append)]
+        [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
+        [PXTimeListPXExt]
+        protected virtual void EPTimeCardSummary_Thu_CacheAttached(PXCache sender) { }
+
+        [PXMergeAttributes(Method = MergeMethod.Append)]
+        [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
+        [PXTimeListPXExt]
+        protected virtual void EPTimeCardSummary_Fri_CacheAttached(PXCache sender) { }
+
+        [PXMergeAttributes(Method = MergeMethod.Append)]
+        [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
+        [PXTimeListPXExt]
+        protected virtual void EPTimeCardSummary_Sat_CacheAttached(PXCache sender) { }
+
+        [PXMergeAttributes(Method = MergeMethod.Append)]
+        [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
+        [PXTimeListPXExt]
+        protected virtual void EPTimeCardSummary_Sun_CacheAttached(PXCache sender) { }
+
+        [PXMergeAttributes(Method = MergeMethod.Append)]
+        [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
+        [PXTimeListPXExt]
+        protected virtual void EPTimecardDetail_TimeSpent_CacheAttached(PXCache sender) { }
+
+        [PXMergeAttributes(Method = MergeMethod.Append)]
+        [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
+        [PXTimeListPXExt]
+        protected virtual void EPTimecardDetail_BillableTimeCalc_CacheAttached(PXCache sender) { }
+    }
+
+    public class PXTimeListPXExtAttribute : PXTimeListAttribute
+    {
+        public override void CacheAttached(PXCache sender)
+        {
+            base.CacheAttached(sender);
+            EPSetup setup = PXSelectReadonly<EPSetup>.Select(sender.Graph);
+            if (setup != null)
+            {
+                EPSetupPXExt setupExt = PXCache<EPSetup>.GetExtension<EPSetupPXExt>(setup);
+                if (setupExt.UsrTimeEntryLookupInterval.HasValue &&
+                    setupExt.UsrTimeEntryLookupIntervalCount.HasValue)
+                {
+                    _AllowedValues = GetValues(setupExt.UsrTimeEntryLookupInterval.Value,
+                                               setupExt.UsrTimeEntryLookupIntervalCount.Value);
+                    _AllowedLabels = GetLabels(_AllowedValues);
+                }
+            }
+        }
+    }
+}]]></CDATA>
+</Graph>

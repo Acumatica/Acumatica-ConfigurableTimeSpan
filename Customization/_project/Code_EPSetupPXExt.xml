@@ -1,0 +1,57 @@
+﻿<Graph ClassName="EPSetupPXExt" Source="#CDATA" IsNew="True" FileType="NewFile">
+    <CDATA name="Source"><![CDATA[using System;
+using PX.Data;
+using PX.Objects.EP;
+
+namespace PXConfigurableTimeSpanExtPkg
+{
+    public class EPSetupPXExt : PXCacheExtension<EPSetup>
+    {
+        #region UsrTimeEntryLookupInterval
+
+        public abstract class usrTimeEntryLookupInterval : IBqlField { }
+
+        [PXDBInt(MinValue = 5, MaxValue = 55)]
+        [PXUIField(DisplayName = "Lookup Interval (minutes)")]
+        public virtual int? UsrTimeEntryLookupInterval { get; set; }
+
+        #endregion
+
+        #region UsrTimeEntryLookupIntervalCount
+
+        public abstract class usrTimeEntryLookupIntervalCount : IBqlField { }
+
+        [PXInt()]
+        [PXDBCalced(typeof(Div<Sub<Mult<int_24, int_60>, IsNull<EPSetupPXExt.usrTimeEntryLookupInterval, int_30>>,
+                                  IsNull<EPSetupPXExt.usrTimeEntryLookupInterval, int_30>>), 
+                    typeof(int))]
+        public virtual int? UsrTimeEntryLookupIntervalCount { get; set; }
+
+        #endregion
+    }
+
+    public class int_30 : Constant<int>
+    {
+        public int_30()
+            : base(30)
+        {
+        }
+    }
+
+    public class int_24 : Constant<int>
+    {
+        public int_24()
+            : base(24)
+        {
+        }
+    }
+
+    public class int_60 : Constant<int>
+    {
+        public int_60()
+            : base(60)
+        {
+        }
+    }
+}]]></CDATA>
+</Graph>
