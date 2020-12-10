@@ -5,8 +5,8 @@ Configurable Time Entry Lookup intervals
 An extension that allows to have time entry lookup intervals configurable.
 
 ### Prerequisites
-* Acumatica 5.30.3428 or higher
-* Acumatica 6.10.0269 or higher
+* Acumatica 2020 R1
+* Acumatica 2020 R2
 
 Quick Start
 -----------
