@@ -9,37 +9,37 @@ namespace PXConfigurableTimeSpanExtPkg
         [PXMergeAttributes(Method = MergeMethod.Append)]
         [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
         [PXTimeListPXExt]
-        protected virtual void EPTimeCardSummary_Mon_CacheAttached(PXCache sender) { }
+        protected virtual void EPTimeCardSummaryWithInfo_Mon_CacheAttached(PXCache sender) { }
 
         [PXMergeAttributes(Method = MergeMethod.Append)]
         [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
         [PXTimeListPXExt]
-        protected virtual void EPTimeCardSummary_Tue_CacheAttached(PXCache sender) { }
+        protected virtual void EPTimeCardSummaryWithInfo_Tue_CacheAttached(PXCache sender) { }
 
         [PXMergeAttributes(Method = MergeMethod.Append)]
         [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
         [PXTimeListPXExt]
-        protected virtual void EPTimeCardSummary_Wed_CacheAttached(PXCache sender) { }
+        protected virtual void EPTimeCardSummaryWithInfo_Wed_CacheAttached(PXCache sender) { }
 
         [PXMergeAttributes(Method = MergeMethod.Append)]
         [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
         [PXTimeListPXExt]
-        protected virtual void EPTimeCardSummary_Thu_CacheAttached(PXCache sender) { }
+        protected virtual void EPTimeCardSummaryWithInfo_Thu_CacheAttached(PXCache sender) { }
 
         [PXMergeAttributes(Method = MergeMethod.Append)]
         [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
         [PXTimeListPXExt]
-        protected virtual void EPTimeCardSummary_Fri_CacheAttached(PXCache sender) { }
+        protected virtual void EPTimeCardSummaryWithInfo_Fri_CacheAttached(PXCache sender) { }
 
         [PXMergeAttributes(Method = MergeMethod.Append)]
         [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
         [PXTimeListPXExt]
-        protected virtual void EPTimeCardSummary_Sat_CacheAttached(PXCache sender) { }
+        protected virtual void EPTimeCardSummaryWithInfo_Sat_CacheAttached(PXCache sender) { }
 
         [PXMergeAttributes(Method = MergeMethod.Append)]
         [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
         [PXTimeListPXExt]
-        protected virtual void EPTimeCardSummary_Sun_CacheAttached(PXCache sender) { }
+        protected virtual void EPTimeCardSummaryWithInfo_Sun_CacheAttached(PXCache sender) { }
 
         [PXMergeAttributes(Method = MergeMethod.Append)]
         [PXRemoveBaseAttribute(typeof(PXTimeListAttribute))]
